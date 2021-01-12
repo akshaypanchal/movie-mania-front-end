@@ -1,4 +1,5 @@
 import MovieItem from '../MovieItem/movieItem.component';
+import './movieList.style.css';
 
 const MovieList = ({ movies }) => {
 
@@ -6,16 +7,14 @@ const MovieList = ({ movies }) => {
 
     return (
 
-        <div>
-            <ul>
+        <div className="container">
+            <div className="row row-cols-5">
                 {
                     movies.map(movie => (
-                        <li>
-                            <MovieItem {...movie} />
-                        </li>
+                        <MovieItem {...movie} />
                     ))
                 }
-            </ul>
+            </div>
         </div>
     );
 

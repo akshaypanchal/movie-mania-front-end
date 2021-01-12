@@ -23,7 +23,7 @@ import axios from "axios";
 function App() {
   return (
     <div className="App">
-      {/* <Navigation /> */}
+      <Navigation />
       <MovieList movies = {movieData} />
     </div>
   );
