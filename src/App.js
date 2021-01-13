@@ -2,29 +2,28 @@ import MovieList from './Components/MovieList/movieList.component';
 import Navigation from './Components/Navigation/navigation.component';
 import movieData from './data/movieList';
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
 import axios from "axios";
-
-// const options = {
-//   method: 'GET',
-//   url: 'https://movie-database-imdb-alternative.p.rapidapi.com/',
-//   params: {s: '2018', page: '1', r: 'json'},
-//   headers: {
-//     'x-rapidapi-key': 'bc672e1d75msh8d1d6b258eaa990p101570jsn50767165a40f',
-//     'x-rapidapi-host': 'movie-database-imdb-alternative.p.rapidapi.com'
-//   }
-// };
-
-// axios.request(options).then(function (response) {
-// 	console.log(response.data);
-// }).catch(function (error) {
-// 	console.error(error);
-// });
+import SignUp from './Components/signup/signUp.component';
 
 function App() {
   return (
     <div className="App">
+
       <Navigation />
-      <MovieList movies = {movieData} />
+
+      <Switch>
+
+        <Route exact path="/">
+          <MovieList movies={movieData} />
+        </Route>
+
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+
+
+      </Switch>
     </div>
   );
 }

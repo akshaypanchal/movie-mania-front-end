@@ -5,7 +5,7 @@ const Navigation = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Navbar</a>
+                <a className="navbar-brand" href="#">Movie Mania</a>
                 <ul className="nav justify-content-end">
                     <li className="nav-item">
                         <a className="nav-link active" aria-current="page" href="#">What's New</a>
