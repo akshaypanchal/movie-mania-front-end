@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import bcrypt from 'bcryptjs';
+import axios from 'axios';
 
 const SignUp = () => {
 
@@ -29,17 +30,17 @@ const SignUp = () => {
 
 
             if (data) {
-                // axios.post("http://localhost:3000/signup", { firstName, lastName, email, password })
-                //     .then(function (response) {
-                //         console.log(response)
-                //         setFirstName("");
-                //         setLastName("");
-                //         setEmail("");
-                //         setPassword("");
-                //     })
-                //     .catch(function (error) {
-                //         console.log(error);
-                //     })
+                axios.post("http://localhost:3000/signup", { firstName, lastName, email, password, hash })
+                    .then(function (response) {
+                        console.log(response)
+                        setFirstName("");
+                        setLastName("");
+                        setEmail("");
+                        setPassword("");
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
             }
             else {
                 alert("Please Enter the Vaid Email Address!!!");
