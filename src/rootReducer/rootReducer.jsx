@@ -1,4 +1,5 @@
 const STORE_LOGIN_DATA = "STORE_LOGIN_DATA";
+const REMOVE_USER_DATA_FROM_STORE = "REMOVE_USER_DATA_FROM_STORE";
 
 const defaultState = {
     user: {}
@@ -12,16 +13,21 @@ const rootReducer = (state = defaultState, action) => {
 
         case STORE_LOGIN_DATA:
 
-
             const userData = {
                 "firstName": action.data.firstName,
-                "lastName":action.data.lastName
+                "lastName": action.data.lastName
             }
 
-            console.log("reducer called", userData);
-
             return {
-                user: newState
+                ...newState,
+                user: userData
+            }
+
+        case REMOVE_USER_DATA_FROM_STORE:
+            const removeUserData = {};
+            return {
+                ...newState,
+                user: removeUserData
             }
 
         default:
