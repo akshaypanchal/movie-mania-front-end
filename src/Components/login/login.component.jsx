@@ -23,10 +23,15 @@ const Login = () => {
 
                 axios.post("http://localhost:3000/login", { email, password })
                     .then(function (response) {
-                        Cookies.set('AuthToken', response.data.AuthToken, { expires: response.data.maxAge })
-                        console.log("response", response.data);
-                        dispatch(storeLoginData(response.data));
-                        history.push("/");
+                        if (response.data.hasOwnProperty("firstName")) {
+                            Cookies.set('AuthToken', response.data.AuthToken, { expires: response.data.maxAge })
+                            console.log("response", response.data);
+                            dispatch(storeLoginData(response.data));
+                            history.push("/");
+                        }
+                        else {
+                            alert("Invalid Login Details");
+                        }
                     })
                     .catch(function (error) {
                         console.log(error);
@@ -35,7 +40,7 @@ const Login = () => {
                 setEmailAddress("");
                 setPassword("");
             }
-            else{
+            else {
                 alert("Please enter the valid email address!!");
                 setEmailAddress("");
                 setPassword("");

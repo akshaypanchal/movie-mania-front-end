@@ -44,7 +44,12 @@ const SignUp = () => {
                         history.push("/login");
                     })
                     .catch(function (error) {
+                        alert("User is already exist!!! Please login directly");
                         console.log(error);
+                        setFirstName("");
+                        setLastName("");
+                        setEmail("");
+                        setPassword("");
                     })
             }
             else {
