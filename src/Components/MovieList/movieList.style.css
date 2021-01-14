@@ -1,3 +1,13 @@
 .container{
  padding: 10px;
 }
+
+
+.movielist :hover{
+    border-color: blue;
+    border-width: 2px;
+}
+
+.movielist :active{
+    size: 100px;
+}

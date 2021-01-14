@@ -8,7 +8,7 @@ const MovieList = ({ movies }) => {
     return (
 
         <div className="container">
-            <div className="row row-cols-5">
+            <div className="movielist row row-cols-5">
                 {
                     movies.map(movie => (
                         <MovieItem {...movie} />
