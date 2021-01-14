@@ -9,5 +9,6 @@
 }
 
 .movielist :active{
-    size: 100px;
+    border-color: red;
+    border-width: 2px;
 }

@@ -24,7 +24,9 @@ const Login = () => {
                 axios.post("http://localhost:3000/login", { email, password })
                     .then(function (response) {
                         if (response.data.hasOwnProperty("firstName")) {
-                            Cookies.set('AuthToken', response.data.AuthToken, { expires: response.data.maxAge })
+                            const inHour = new Date(new Date().getTime() + response.data.maxAge * 60 * 1000);
+                            console.log("Time", inHour);
+                            Cookies.set('AuthToken', response.data.AuthToken, { expires: inHour })
                             console.log("response", response.data);
                             dispatch(storeLoginData(response.data));
                             history.push("/");

@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import axios from "axios";
 import SignUp from './Components/signup/signUp.component';
 import Login from './Components/login/login.component';
+import MovieDetails from './Components/movieDetails/movieDetails.component';
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
 
         <Route path="/login">
           <Login />
+        </Route>
+
+        <Route path="/details">
+          <MovieDetails />
         </Route>
 
 
