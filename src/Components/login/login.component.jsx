@@ -29,7 +29,7 @@ const Login = () => {
                             Cookies.set('AuthToken', response.data.AuthToken, { expires: inHour })
                             console.log("response", response.data);
                             dispatch(storeLoginData(response.data));
-                            history.push("/");
+                            history.push("/user");
                         }
                         else {
                             alert("Invalid Login Details");

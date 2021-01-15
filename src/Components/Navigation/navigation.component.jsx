@@ -20,7 +20,7 @@ const Navigation = () => {
 
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light overflow-hidden">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">Movie Mania</a>
 

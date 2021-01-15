@@ -6,9 +6,13 @@ import { Switch, Route } from 'react-router-dom';
 import axios from "axios";
 import SignUp from './Components/signup/signUp.component';
 import Login from './Components/login/login.component';
-import MovieDetails from './Components/movieDetails/movieDetails.component';
+import UserTabs from './Components/userTabs/userTabs.component';
+import {useSelector} from "react-redux";
 
 function App() {
+
+  const user = useSelector(state => state.user);
+
   return (
     <div className="App">
 
@@ -28,10 +32,14 @@ function App() {
           <Login />
         </Route>
 
-        <Route path="/details">
-          <MovieDetails />
+        <Route path="/user">
+         {
+            Object.keys(user).length > 0 ?
+                <UserTabs />
+                : 
+                <p>Please login first in order to access the application!!!</p>        
+         }
         </Route>
-
 
       </Switch>
     </div>

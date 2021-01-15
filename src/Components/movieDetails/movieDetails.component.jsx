@@ -1,7 +1,10 @@
 import { Modal, Button } from 'react-bootstrap';
 import './movieDetails.style.css';
+import {useSelector} from 'react-redux';
+import {useHistory} from 'react-router-dom'
 
 const MovieDetails = (props) => {
+
 
     return (
 
@@ -26,7 +29,8 @@ const MovieDetails = (props) => {
                 <p><strong>IMDB Rating: </strong> {props.imdb}</p>
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={props.onHide}>Close</Button>
+                <Button onClick={props.bookthismovie}>Book this Movie</Button>
+                <Button variant="danger" onClick={props.onHide}>Close</Button>
             </Modal.Footer>
         </Modal>
 

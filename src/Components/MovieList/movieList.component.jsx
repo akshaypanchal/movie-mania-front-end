@@ -7,7 +7,7 @@ const MovieList = ({ movies }) => {
 
     return (
 
-        <div className="container">
+        <div className="container" >
             <div className="movielist row row-cols-5">
                 {
                     movies.map(movie => (
