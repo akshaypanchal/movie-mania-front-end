@@ -4,11 +4,14 @@ import { Modal, Button } from 'react-bootstrap';
 import { useState } from 'react';
 import {useHistory} from "react-router-dom";
 import {useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
+import {buyThisMovie} from '../../actions/actions';
 
 const MovieItem = ({ name, image, context, director, Stars, imdb  }) => {
 
     const user =  useSelector(state=>state.user);
     const history = useHistory();
+    const dispatch = useDispatch();
     // const [show, setShow] = useState(false);
     const [modalShow, setModalShow] = useState(false);
 
@@ -17,10 +20,9 @@ const MovieItem = ({ name, image, context, director, Stars, imdb  }) => {
 
     const bookTheMovie = () => {
 
-        console.log("button cliked!!!");
 
         if(Object.keys(user).length > 0){
-            alert("you are logged in!!");
+            dispatch(buyThisMovie(name));
         }
         else{
             alert("Please login first in order to book the movie!!!");

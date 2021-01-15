@@ -8,8 +8,9 @@ const MovieBooking = () => {
     const [numberOfTickets, setNumberOfTickets] = useState("");
     const [bookingDate, setBookingDate] = useState("");
     const [showType, setShowType] = useState("");
-    const [movieName, setMovieName] = useState("");
+    // const [movieName, setMovieName] = useState("");
     const user = useSelector(state=>state.user);
+    const movieName = useSelector(state=>state.selectedMovie);
 
     const buyMovie = () => {
 
@@ -25,7 +26,6 @@ const MovieBooking = () => {
                         console.log(error);
                     })
 
-
     }
 
 
@@ -34,7 +34,7 @@ const MovieBooking = () => {
         <div className="container">
               <div className="row">
                 <label className="form-label">Movie Name:</label>
-                <input  onChange={(e)=>setMovieName(e.target.value)} id="fname" type="text" className="form-control" required />
+                <input value={movieName} id="movieName" type="text" className="form-control" required />
             </div>
             <div className="row">
                 <label className="form-label">No. of Tickets:</label>
