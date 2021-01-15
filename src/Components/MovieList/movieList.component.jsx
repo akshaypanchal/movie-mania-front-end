@@ -3,8 +3,6 @@ import './movieList.style.css';
 
 const MovieList = ({ movies }) => {
 
-    console.log(movies);
-
     return (
 
         <div className="container" >

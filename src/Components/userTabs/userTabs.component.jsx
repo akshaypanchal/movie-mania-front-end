@@ -3,6 +3,7 @@ import MovieList from '../MovieList/movieList.component';
 import SignUp from '../signup/signUp.component';
 import movieData from '../../data/movieList';
 import MovieOffers from '../MovieOffers/movieOffers.component';
+import MovieBooking from '../movieBooking/movieBooking.component';
 
 const UserTabs = () => {
 
@@ -15,7 +16,7 @@ const UserTabs = () => {
                 <MovieOffers />
             </Tab>
             <Tab eventKey="past Movies" title="My Past Movie">
-                <SignUp />
+                <MovieBooking />
             </Tab>
         </Tabs>
     );

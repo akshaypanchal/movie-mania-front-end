@@ -1,7 +1,5 @@
 import { Modal, Button } from 'react-bootstrap';
 import './movieDetails.style.css';
-import {useSelector} from 'react-redux';
-import {useHistory} from 'react-router-dom'
 
 const MovieDetails = (props) => {
 
