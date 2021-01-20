@@ -2,9 +2,11 @@ import {useState} from 'react';
 import axios from 'axios';
 import {useSelector} from 'react-redux';
 import { set } from 'js-cookie';
+import {useHistory} from 'react-router-dom';
 
 const MovieBooking = () => {
 
+    const history = useHistory();
     const [numberOfTickets, setNumberOfTickets] = useState("");
     const [bookingDate, setBookingDate] = useState("");
     const [showType, setShowType] = useState("");
@@ -21,6 +23,8 @@ const MovieBooking = () => {
                         setNumberOfTickets("");
                         setShowType("");
                         alert("Your Movie is booked!!!");
+                        history.push("/user");
+                        
                     })
                     .catch(function (error) {
                         console.log(error);

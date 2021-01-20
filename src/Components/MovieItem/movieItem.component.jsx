@@ -23,6 +23,7 @@ const MovieItem = ({ name, image, context, director, Stars, imdb  }) => {
 
         if(Object.keys(user).length > 0){
             dispatch(buyThisMovie(name));
+            history.push("/booking")
         }
         else{
             alert("Please login first in order to book the movie!!!");

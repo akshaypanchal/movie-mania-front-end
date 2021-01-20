@@ -10,10 +10,13 @@ import {useSelector} from "react-redux";
 import MovieBooking from './Components/movieBooking/movieBooking.component';
 import Cookie from 'js-cookie';
 
+
 function App() {
 
-  const user = useSelector(state => state.user);
 
+
+  const user = useSelector(state => state.user);
+  
   return (
     <div className="App">
 
