@@ -1,10 +1,13 @@
 const STORE_LOGIN_DATA = "STORE_LOGIN_DATA";
 const REMOVE_USER_DATA_FROM_STORE = "REMOVE_USER_DATA_FROM_STORE";
 const BUY_THIS_MOVIE = "BUY_THIS_MOVIE";
+const FETCH_BOOKED_MOVIE_DATA = "FETCH_BOOKED_MOVIE_DATA";
+const REMOVE_BOOKED_MOVIE_DATA_AFTER_LOGOUT = "REMOVE_BOOKED_MOVIE_DATA_AFTER_LOGOUT";
 
 const defaultState = {
     user: {},
     selectedMovie:"",
+    bookedMovieRecords: []
 }
 
 const rootReducer = (state = defaultState, action) => {
@@ -39,6 +42,22 @@ const rootReducer = (state = defaultState, action) => {
             selectedMovie: userSelectedMovie
         }
 
+        case FETCH_BOOKED_MOVIE_DATA:
+            let newArray = [...newState.bookedMovieRecords, action.data];
+            console.log("newArray");
+            return{
+                ...newState,
+                bookedMovieRecords: newArray
+            }
+        
+        case REMOVE_BOOKED_MOVIE_DATA_AFTER_LOGOUT:
+            
+            const emptyArray = [];
+            console.log("return state called!!!!");
+            return{
+                ...newState,
+                bookedMovieRecords:emptyArray
+            }
 
         default:
             return newState;

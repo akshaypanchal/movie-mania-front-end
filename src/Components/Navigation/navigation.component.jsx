@@ -1,12 +1,14 @@
 import './navigation.style.css';
 import { Link } from 'react-router-dom';
-import Cookie from 'js-cookie';
+import Cookie, { remove } from 'js-cookie';
 import { useSelector } from "react-redux";
-import {removeUserDataFromStore} from '../../actions/actions';
+import {removeUserDataFromStore, removeBookedMovieDataAfterUserLogout} from '../../actions/actions';
 import {useDispatch} from 'react-redux';
+import { useHistory} from 'react-router-dom';
 
 const Navigation = () => {
 
+    const history = useHistory();
     const dispatch = useDispatch("");
     const user = useSelector(state => state.user);
 
@@ -16,6 +18,9 @@ const Navigation = () => {
 
         Cookie.remove("AuthToken");
         dispatch(removeUserDataFromStore());
+        dispatch(removeBookedMovieDataAfterUserLogout());
+        history.push("/login");
+
     }
 
 
